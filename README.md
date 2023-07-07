@@ -9,6 +9,7 @@ Este repositório contém a segunda atividade avaliativa do programa de estágio
     <li><a href="#ec2_web">Criando uma instância EC2 pela console web da AWS</a><br>
     <li><a href="#portas">Configurando o grupo de segurança da instância EC2</a><br>
     <li><a href="#nfs">Configurando um Network File System (NFS)</a><br>
+    <li><a href="#rds">Configurando um Relational Database Service (RDS)</a><br>
   </ul>
 </ul><br>
 
@@ -121,3 +122,12 @@ Este processo refere-se à criação de um NFS na instância EC2.<br>
 </table>
   <li>Para configurar a montagem automática do diretório quando a máquina é iniciada, execute o comando <code>sudo vim /etc/fstab</code> e adicione a linha <code>fs-0cf1d041dea5dc917.efs.us-east-1.amazonaws.com:/ /mnt/efs/wordpress nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 0 0</code>.<br>
 </ol>
+
+<div id="rds"><h4>Configurando um Relational Database Service (RDS):</h4><div>
+Este processo refere-se à criação de um RDS na console web da AWS.<br>
+<ol>
+  <li>No console web da AWS, através do menu 'Serviços', no canto superior esquerdo, acesse o serviço de 'RDS' (Relational Database Service). O termo 'RDS' também pode ser buscado através da barra de pesquisa, no topo da página.<br>
+  <li>Na coluna esquerda, clique em 'Bancos de dados'. Depois, em ‘Criar banco de dados’, no topo da página.<br>
+  <li>No método de ‘Criação padrão’, selecione MySQL em ‘Opções do mecanismo’. Em ‘Modelos’, selecione o nível gratuito.<br>
+  <li>Na sessão ‘Configurações’, em ‘Configurações de credenciais’, adicione nome de usuário e senha.<br>
+  <li>Ao final, clique em ‘Criar banco de dados’.<br>
