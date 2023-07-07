@@ -7,6 +7,7 @@ Este repositório contém a segunda atividade avaliativa do programa de estágio
   <li><a href="#exe_exercicio">Executando os requisitos do exercício</a><br>
   <ul>
     <li><a href="#ec2_web">Criando uma instância EC2 pela console web da AWS</a><br>
+    <li><a href="#portas">Configurando o grupo de segurança da instância EC2</a><br>
     <li><a href="#nfs">Configurando um Network File System (NFS)</a><br>
   </ul>
 </ul><br>
@@ -36,6 +37,51 @@ Este processo refere-se à criação de uma instância EC2 com o sistema operaci
   <li>Na sessão 'Configurar armazenamento', selecione 16GB, tipo gp2 de volume raiz.<br>
   <li>Em ‘Detalhes avançados’, na sessão ‘Dados do usuário’, preencha o campo com o conteúdo do script (user_data.sh) contido nesse repositório.<br>
   <li>Em 'Resumo', verifique as configurações selecionadas, certificando-se que o 'Número de instâncias' seja '1'. Clique no botão 'Executar instância'.<br>
+</ol>
+
+<div id="portas"><h4>Configurando o grupo de segurança da instância EC2:</h4><div>
+Este processo refere-se à configuração de regras de entrada no grupo de segurança associado à instância, neste caso, realizado através do console web.<br>
+<ol>
+  <li>No console web da AWS, através do menu 'Serviços', no canto superior esquerdo, acesse o serviço de 'EC2'. O termo 'EC2' também pode ser buscado através da barra de pesquisa, no topo da página.<br>
+  <li>Na coluna esquerda, na seção 'Rede e segurança', clique em 'Security groups'.<br>
+  <li>Selecione o grupo de segurança criado anteriormente, clique no botão 'Ações' e 'Editar regras de entrada'.<br>
+  <li>Clique em 'Adicionar regra' ao inserir os dados de cada linha da tabela abaixo.<br><br>
+  <table>
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Intervalo de portas</th>
+        <th>Tipo de origem</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>SSH</td>
+        <td>22</td>
+        <td>Qualquer local-IPv4</td>
+      </tr>
+      <tr>
+        <td>MYSQL/Aurora</td>
+        <td>3306</td>
+        <td>Qualquer local-IPv4</td>
+      </tr>
+      <tr>
+        <td>NFS</td>
+        <td>2049</td>
+        <td>Qualquer local-IPv4</td>
+      </tr>
+      <tr>
+        <td>HTTP</td>
+        <td>80</td>
+        <td>Qualquer local-IPv4</td>
+      </tr>
+      <tr>
+        <td>HTTPS</td>
+        <td>443</td>
+        <td>Qualquer local-IPv4</td>
+      </tr>
+    </tbody>
+    </table>
+  <li>Após inseridas as regras de entrada, clique em 'Salvar regras'.<br>
 </ol>
 
 <div id="nfs"><h4>Configurando um Network File System (NFS):</h4><div>
