@@ -6,10 +6,11 @@ Este repositório contém a segunda atividade avaliativa do programa de estágio
   <li><a href="#req_exercicio">Requisitos do exercício</a><br>
   <li><a href="#exe_exercicio">Executando os requisitos do exercício</a><br>
   <ul>
-    <li><a href="#ec2_web">Criando uma instância EC2 pela console web da AWS</a><br>
+    <li><a href="#ec2_web">Configurando uma instância EC2</a><br>
     <li><a href="#portas">Configurando o grupo de segurança da instância EC2</a><br>
     <li><a href="#nfs">Configurando um Network File System (NFS)</a><br>
     <li><a href="#rds">Configurando um Relational Database Service (RDS)</a><br>
+    <li><a href="#ami">Configurando a Amazon Image (AMI)</a><br>
   </ul>
 </ul><br>
 
@@ -23,7 +24,7 @@ Este repositório contém a segunda atividade avaliativa do programa de estágio
 
 <div id="exe_exercicio"><h2>Executando os requisitos do exercício</h2><div>
 
-<div id="ec2_web"><h4>Criando uma instância EC2 pela console web da AWS:</h4><div>
+<div id="ec2_web"><h4>Configurando uma instância EC2:</h4><div>
 Este processo refere-se à criação de uma instância EC2 com o sistema operacional Amazon Linux 2 (família t3.small e 16 GB de armazenamento SSD).<br>
 <ol>
   <li>No console web da AWS, através do menu 'Serviços', no canto superior esquerdo, acesse o serviço de 'EC2'. O termo 'EC2' também pode ser buscado através da barra de pesquisa, no topo da página.<br>
@@ -131,3 +132,13 @@ Este processo refere-se à criação de um RDS na console web da AWS.<br>
   <li>No método de ‘Criação padrão’, selecione MySQL em ‘Opções do mecanismo’. Em ‘Modelos’, selecione o nível gratuito.<br>
   <li>Na sessão ‘Configurações’, em ‘Configurações de credenciais’, adicione nome de usuário e senha.<br>
   <li>Ao final, clique em ‘Criar banco de dados’.<br>
+</ol>
+
+<div id="ami"><h4>Configurando a Amazon Image (AMI):</h4><div>
+Este processo refere-se à criação de uma imagem a partir da instância executada anteriormente.
+<ol>
+  <li>No console web da AWS, através do menu 'Serviços', no canto superior esquerdo, acesse o serviço de 'EC2'. O termo 'EC2' também pode ser buscado através da barra de pesquisa, no topo da página.<br>
+  <li>Na coluna esquerda, na sessão 'Instâncias', clique em 'Instâncias'.<br>
+  <li>Selecione a instância que deseja criar a imagem, clique no menu ‘Ações’, ‘Imagem e modelos’ e ‘Criar imagem’.<br>
+  <li>Insira um nome e clique em ‘Criar imagem’.<br>
+</ol>
