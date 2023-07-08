@@ -13,6 +13,7 @@ Este repositório contém a segunda atividade avaliativa do programa de estágio
     <li><a href="#compose">Configurando o Docker Compose</a><br>
     <li><a href="#ami">Configurando a Amazon Image (AMI)</a><br>
     <li><a href="#ec2_2">Configurando uma instância EC2 em outra zona de disponibilidade</a><br>
+    <li><a href="#loadb">Configurando o Load Balancer</a><br>
   </ul>
 </ul><br>
 
@@ -173,3 +174,16 @@ Este processo refere-se à criação de uma instância EC2 a partir da AMI gerad
   <li>Em 'Resumo', verifique as configurações selecionadas, certificando-se que o 'Número de instâncias' seja '1'. Clique no botão 'Executar instância'.<br>
 </ol>
 
+<div id="loadb"><h4>Configurando o Load Balancer:</h4><div>
+Este processo refere-se à criação de um balanceador de carga que distribui o tráfego de requisições entre as zonas de disponibilidade das instâncias em uso.
+<ol>
+  <li>No console web da AWS, através do menu 'Serviços', no canto superior esquerdo, acesse o serviço de 'EC2'. O termo 'EC2' também pode ser buscado através da barra de pesquisa, no topo da página.<br>
+  <li>Na coluna esquerda, na sessão 'Balanceamento de carga', clique em 'Load balancers'.<br>
+  <li>Para criar um novo balanceador de carga, clique no botão 'Create load balancer' no topo da página.<br>
+  <li>O tipo do serviço a ser criado é ‘Application Load Balancer’. Clique em ‘Create’.<br>
+  <li>Atribua um nome ao balanceador. O esquema do serviço é ‘Internet-facing’. Tipo de endereço IP é ‘IPv4’.<br>
+  <li>Na sessão ‘Network mapping’, selecione a mesma VPC e zonas de disponibilidade utilizadas pelas instâncias EC2 criadas.<br>
+  <li>Em ‘Security groups’, escolha o mesmo grupo de segurança das instâncias.<br>
+  <li>Em ‘Listeners and routing’, selecione o target group criado anteriormente.<br>
+  <li>Revise as configurações e clique em ‘Create load balancer’.<br>
+</ol>
