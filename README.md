@@ -13,6 +13,7 @@ Este repositório contém a segunda atividade avaliativa do programa de estágio
     <li><a href="#compose">Configurando o Docker Compose</a><br>
     <li><a href="#ami">Configurando a Amazon Image (AMI)</a><br>
     <li><a href="#ec2_2">Configurando uma instância EC2 em outra zona de disponibilidade</a><br>
+    <li><a href="#target">Configurando o Target Group</a><br>
     <li><a href="#loadb">Configurando o Load Balancer</a><br>
   </ul>
 </ul><br>
@@ -172,6 +173,16 @@ Este processo refere-se à criação de uma instância EC2 a partir da AMI gerad
   <li>Na seção 'Configurações de rede', clique em ‘Editar’. Escolha uma sub-rede que esteja em uma zona de disponibilidade diferente da instância criada anteriormente. Selecione o grupo de segurança já configurado.<br>
   <li>Na sessão 'Configurar armazenamento', selecione 16GB, tipo gp2 de volume raiz.<br>
   <li>Em 'Resumo', verifique as configurações selecionadas, certificando-se que o 'Número de instâncias' seja '1'. Clique no botão 'Executar instância'.<br>
+</ol>
+
+<div id="target"><h4>Configurando o Target Group:</h4><div>
+Este processo refere-se à criação de um grupo de destino que será utilizado pelo balanceador de carga.
+<ol>
+  <li>No console web da AWS, através do menu 'Serviços', no canto superior esquerdo, acesse o serviço de 'EC2'. O termo 'EC2' também pode ser buscado através da barra de pesquisa, no topo da página.<br>
+  <li>Na coluna esquerda, na sessão 'Balanceamento de carga', clique em 'Grupos de destino'.<br>
+  <li>Para criar um novo grupo de destino, clique no botão 'Create target group' no topo da página.<br>
+  <li>Na sessão ‘Basic configuration’, escolha o tipo de destino como ‘Instances’. Adicione um nome ao grupo, selecione protocolo, porta, e VPC utilizada. Clique em ‘Next’.<br>
+  <li>Na segunda etapa, em ‘Register targets’, escolha as duas instâncias criadas. Finalize o processo clicando em ‘Create target group’.<br>
 </ol>
 
 <div id="loadb"><h4>Configurando o Load Balancer:</h4><div>
