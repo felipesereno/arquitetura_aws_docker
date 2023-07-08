@@ -10,6 +10,7 @@ Este repositório contém a segunda atividade avaliativa do programa de estágio
     <li><a href="#portas">Configurando o grupo de segurança da instância EC2</a><br>
     <li><a href="#nfs">Configurando um Network File System (NFS)</a><br>
     <li><a href="#rds">Configurando um Relational Database Service (RDS)</a><br>
+    <li><a href="#compose">Configurando o Docker Compose</a><br>
     <li><a href="#ami">Configurando a Amazon Image (AMI)</a><br>
   </ul>
 </ul><br>
@@ -132,6 +133,15 @@ Este processo refere-se à criação de um RDS na console web da AWS.<br>
   <li>No método de ‘Criação padrão’, selecione MySQL em ‘Opções do mecanismo’. Em ‘Modelos’, selecione o nível gratuito.<br>
   <li>Na sessão ‘Configurações’, em ‘Configurações de credenciais’, adicione nome de usuário e senha.<br>
   <li>Ao final, clique em ‘Criar banco de dados’.<br>
+</ol>
+
+<div id="compose"><h4>Configurando o Docker Compose:</h4><div>
+Este processo refere-se à criação do arquivo de configuração do Docker Compose e instanciamento da aplicação Wordpress que conecta-se ao RDS e tem seus arquivos estáticos armazenados no EFS.
+<ol>
+  <li>Ao acessar o terminal da instância em execução, crie o arquivo de configuração do serviço de virtualização executando o comando <code>vim docker-compose.yml</code>.<br>
+  <li>Insira o conteúdo do script (docker-compose.yml) presente nesse repositório. Altere as variáveis de ambiente do Wordpress no arquivo com as configurações definidas na criação do RDS.<br>
+  <li>Após salvar o script e sair do editor de texto, execute o comando <code>docker-compose up -d</code> no mesmo diretório em que está armazenado o arquivo de configuração.<br>
+  <li>O retorno do comando <code>docker ps</code> deve mostrar o container em execução.<br>
 </ol>
 
 <div id="ami"><h4>Configurando a Amazon Image (AMI):</h4><div>
