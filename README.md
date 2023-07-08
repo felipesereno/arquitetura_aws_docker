@@ -24,6 +24,9 @@ Este repositório contém a segunda atividade avaliativa do programa de estágio
   <li>Configurar o serviço de Load Balancer AWS para a aplicação Wordpress.<br> 
 </ul>
 
+<h4>Arquitetura implementada na atividade:</h4>
+<img src="architecture.png">
+
 <div id="exe_exercicio"><h2>Executando os requisitos do exercício</h2><div>
 
 <div id="ec2_web"><h4>Configurando uma instância EC2:</h4><div>
