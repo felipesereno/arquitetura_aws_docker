@@ -15,6 +15,7 @@ Este repositório contém a segunda atividade avaliativa do programa de estágio
     <li><a href="#ec2_2">Configurando uma instância EC2 em outra zona de disponibilidade</a><br>
     <li><a href="#target">Configurando o Target Group</a><br>
     <li><a href="#loadb">Configurando o Load Balancer</a><br>
+    <li><a href="#scaling">Configurando um grupo de Auto Scaling</a><br>
   </ul>
 </ul><br>
 
@@ -49,7 +50,7 @@ Este processo refere-se à criação de uma instância EC2 com o sistema operaci
 </ol>
 
 <div id="portas"><h4>Configurando o grupo de segurança da instância EC2:</h4><div>
-Este processo refere-se à configuração de regras de entrada no grupo de segurança associado à instância, neste caso, realizado através do console web.<br>
+Este processo refere-se à configuração de regras de entrada no grupo de segurança associado à instância.<br>
 <ol>
   <li>No console web da AWS, através do menu 'Serviços', no canto superior esquerdo, acesse o serviço de 'EC2'. O termo 'EC2' também pode ser buscado através da barra de pesquisa, no topo da página.<br>
   <li>Na coluna esquerda, na seção 'Rede e segurança', clique em 'Security groups'.<br>
@@ -197,4 +198,20 @@ Este processo refere-se à criação de um balanceador de carga que distribui o 
   <li>Em ‘Security groups’, escolha o mesmo grupo de segurança das instâncias.<br>
   <li>Em ‘Listeners and routing’, selecione o target group criado anteriormente.<br>
   <li>Revise as configurações e clique em ‘Create load balancer’.<br>
+</ol>
+
+<div id="scaling"><h4>Configurando um grupo de Auto Scaling:</h4><div>
+Este processo refere-se à criação de um grupo de auto escalonamento da aplicação.
+<ol>
+  <li>No console web da AWS, através do menu 'Serviços', no canto superior esquerdo, acesse o serviço de 'EC2'. O termo 'EC2' também pode ser buscado através da barra de pesquisa, no topo da página.<br>
+  <li>Na coluna esquerda, na sessão 'Auto Scaling', clique em 'Grupos Auto Scaling'.<br>
+  <li>Para criar um novo grupo de escalonamento, clique no botão 'Criar grupo do Auto Scaling' no topo da página.<br>
+  <li>Atribua um nome ao grupo. Em ‘Modelo de execução’, clique em ‘Alterar para configuração de execução’, depois em ‘Criar uma configuração de execução’.<br>
+  <li>Atribua um nome para a configuração de execução, selecione a AMI criada anteriormente, o tipo de instância, o grupo de segurança utilizado e o par de chaves para acesso. Clique em ‘Criar configuração de execução’.<br>
+  <li>Ao retornar para a criação do grupo de auto escalonamento, selecione a configuração de execução gerada.<br>
+  <li>Na sessão ‘Rede’, escolha a VPC e sub-redes utilizadas pelas instâncias. Clique em ‘Próximo’.<br>
+  <li>Em ‘Balanceamento de carga’, selecione ‘Anexar a um balanceador de carga existente’ e ‘Escolha entre seus grupos de destino de balanceador de carga’, atribuindo o target criado. Avance para a próxima etapa.<br>
+  <li>Ao configurar o ‘Tamanho do grupo’, preencha os valores para cada campo.<br>
+  <li>Se desejar ignorar as últimas duas etapas (notificações e etiquetas), clique em ‘Pular para a revisão’.<br>
+  <li>Revise as informações e crie o grupo.<br>
 </ol>
