@@ -16,6 +16,7 @@ Este repositório contém a segunda atividade avaliativa do programa de estágio
     <li><a href="#target">Configurando o Target Group</a><br>
     <li><a href="#loadb">Configurando o Load Balancer</a><br>
     <li><a href="#scaling">Configurando um grupo de Auto Scaling</a><br>
+    <li><a href="#wp">Configurando o Wordpress</a><br>
   </ul>
 </ul><br>
 
@@ -214,4 +215,11 @@ Este processo refere-se à criação de um grupo de auto escalonamento da aplica
   <li>Ao configurar o ‘Tamanho do grupo’, preencha os valores para cada campo.<br>
   <li>Se desejar ignorar as últimas duas etapas (notificações e etiquetas), clique em ‘Pular para a revisão’.<br>
   <li>Revise as informações e crie o grupo.<br>
+</ol>
+
+<div id="wp"><h4>Configurando o Wordpress:</h4><div>
+Este processo refere-se à configuração final do Wordpress para direcionamento pelo balanceador de carga.
+<ol>
+  <li>Para formatar a página da aplicação, acesse o IP público de uma das instâncias precedido por ‘http://’. Configure o serviço preenchendo os formulários.<br>
+  <li>No Dashboard, presente no endereço <code>ip_da_instancia/wp-admin/options-general.php</code>, podendo ser acessado também pelo menu da coluna esquerda, em ‘Settings’, inclua o DNS name do load balancer no campo ‘Site Adress (URL)’. Defina o protocolo http antes do endereço.<br>
 </ol>
