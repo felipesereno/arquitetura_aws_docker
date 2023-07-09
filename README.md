@@ -221,5 +221,5 @@ Este processo refere-se à criação de um grupo de auto escalonamento da aplica
 Este processo refere-se à configuração final do Wordpress para direcionamento pelo balanceador de carga.
 <ol>
   <li>Para formatar a página da aplicação, acesse o IP público de uma das instâncias precedido por ‘http://’. Configure o serviço preenchendo os formulários.<br>
-  <li>No Dashboard, presente no endereço <code>ip_da_instancia/wp-admin/options-general.php</code>, podendo ser acessado também pelo menu da coluna esquerda, em ‘Settings’, inclua o DNS name do load balancer no campo ‘Site Adress (URL)’. Defina o protocolo http antes do endereço.<br>
+  <li>No Dashboard, presente no endereço <code>ip_da_instancia/wp-admin/options-general.php</code>, podendo ser acessado também pelo menu da coluna esquerda, em ‘Settings’, inclua o DNS name do load balancer nos campos ‘Site Address (URL)’ e 'WordPress Address (URL)'. Defina o protocolo http antes do endereço.<br>
 </ol>
